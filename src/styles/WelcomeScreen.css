@@ -1,0 +1,23 @@
+/* src/styles/WelcomeScreen.css */
+
+.welcome-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #ffc0cb;
+}
+
+.welcome-screen img {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.welcome-screen button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  color: yellowgreen;
+}
