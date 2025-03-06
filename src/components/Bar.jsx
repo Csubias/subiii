@@ -46,16 +46,12 @@ function Bar() {
       {currentItem ? (
         <div>
           <SliceCard
-            name={currentItem.name}
-            description={currentItem.category}
-            price={currentItem.price}
+            name={currentItem.name || currentItem.product_name}
+            description={currentItem.category || currentItem.description}
+            products={currentItem.type === "charola" ? currentItem.products : null}
+            toppings={currentItem.toppings}
             onClick={() => {}}
           />
-          <ul>
-            {currentItem.toppings.map((topping, index) => (
-              <li key={index}>{topping}</li>
-            ))}
-          </ul>
           <button onClick={nextItem}>Siguiente</button>
         </div>
       ) : (

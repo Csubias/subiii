@@ -2,7 +2,7 @@
 import React from "react";
 
 // El componente SliceCard recibe propiedades desde SelectSlice.jsx
-const SliceCard = ({ name, description, price, onClick }) => {
+const SliceCard = ({ name, products, toppings, onClick }) => {
   const handleClick = () => {
     console.log(`Card clicked: ${name}`); // Debugging
     onClick();
@@ -25,8 +25,23 @@ const SliceCard = ({ name, description, price, onClick }) => {
       onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
     >
       <h3>{name}</h3>
-      <p>{description}</p>
-      <p>${price}</p>
+      {products && (
+        <ul>
+          {products.map((product, index) => (
+            <li key={index}>
+              {product.name}
+              {product.category && ` (${product.category})`}
+            </li>
+          ))}
+        </ul>
+      )}
+      {toppings && (
+        <ul>
+          {toppings.map((topping, index) => (
+            <li key={index}>{topping}</li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
